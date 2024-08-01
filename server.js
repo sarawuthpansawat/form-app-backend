@@ -10,7 +10,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/formsdb', {
+// mongoose.connect('mongodb://localhost:27017/formsdb', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
+ mongoose.connect('mongodb+srv://admin:1234@cluster0.3zfqjpi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
