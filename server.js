@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -14,10 +14,13 @@ app.use(cors());
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
 // });
- mongoose.connect('mongodb+srv://admin:1234@cluster0.3zfqjpi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+// server.js
+
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+
 
 const formSchema = new mongoose.Schema({
     name: String,
